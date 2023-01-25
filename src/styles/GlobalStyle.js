@@ -1,10 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import { fontSize, whichColor } from "./style"
 
 const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
-        font-size: 10px;
-        background-color: #f8f8f8;
+        font-size: ${fontSize("small")};
+        background-color: ${whichColor("main")};
     }
 `
 

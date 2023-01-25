@@ -6,14 +6,12 @@ import { Span } from "../../../styles/Span"
 
 // ===== style =====
 const LikeDiv = styled(Div)`
-    display: flex;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     cursor:pointer;
 `
 
 const DisLikeDiv = styled(Div)`
-    display: flex;  
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     cursor:pointer;

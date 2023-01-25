@@ -5,14 +5,7 @@ import styled from "styled-components"
 import {videoInfoState} from "../../../recoil/VideoState"
 import {videoState} from "../../../recoil/DataState"
 
-const FullIcon = styled.img`
-    position: absolute;
-    display: flex;
-    width: 48px;
-    bottom: 0;
-    right: 0;
-    cursor: pointer;
-`
+import { FullIcon } from "../../../styles/Icon"
 
 const ThumbStyle = styled.img`
     width: 100%
