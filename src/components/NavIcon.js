@@ -8,6 +8,7 @@ import { videoInfoState } from "../recoil/VideoState"
 import { Div, NavBox } from "../styles/Div"
 import {  Icon } from "../styles/Icon"
 
+import {Route, Link} from "react-router-dom"
 
 // ===== component =====
 
@@ -22,20 +23,22 @@ const NavIcon = (props) =>{
     const data = props.data
 
     // ===== data =====
-    const {src, txt} = {...data}
+    const {src, txt, address} = {...data}
     
     const whichNavClickEvent = ()=>{
-        setWhichNavClick(txt)
+        setWhichNavClick(address)
         setVideoInfo({
             "index" : null
         })
     }
 
     return(
-        <NavBox href="" isMenuClick = {isMenuClick} onClick={whichNavClickEvent}>
-            <Icon src = {src}/>
-            <span>{txt}</span>
-        </NavBox>
+        <Link to={address === "home" ? "/" :`/${address}`}>
+            <NavBox isMenuClick = {isMenuClick} onClick={whichNavClickEvent}>
+                <Icon src = {src}/>
+                <span>{txt}</span>
+            </NavBox>
+        </Link>
     )
 }
 

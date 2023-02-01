@@ -3,4 +3,6 @@ import {RecoilRoot} from "recoil"
 
 import App from "./App"
 
-ReactDOM.createRoot(document.getElementById("root")).render(<RecoilRoot><App/></RecoilRoot>)
+import { BrowserRouter, HashRouter } from "react-router-dom"
+
+ReactDOM.createRoot(document.getElementById("root")).render(<HashRouter><RecoilRoot><App/></RecoilRoot></HashRouter>)

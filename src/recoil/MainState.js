@@ -10,7 +10,7 @@ export const isMenuClickState = atom({
 // NavIcon Click => show contents about icon
 export const whichNavClickState = atom({
     "key" : "whichNavClickState",
-    "default" : "홈"
+    "default" : "home"
 })
 
 // Mobile search click show search bar

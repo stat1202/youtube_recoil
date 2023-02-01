@@ -8,11 +8,14 @@ import { P, VideoHead } from "../../styles/P"
 import { Div, Contents, ContentsBox, ContentsTop, HiddenBox } from "../../styles/Div"
 import { Span, Timer } from "../../styles/Span"
 
+import {Link} from "react-router-dom"
+
 // ===== Style =====
 
 const Thumb = styled.img`
     width: 100%;
 `
+
 
 // =====Components =====
 const MainContents = (props) =>{
@@ -37,47 +40,51 @@ const MainContents = (props) =>{
     }
 
     return(
-        <Contents onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)}
-        margin = "0 8px 40px 8px" flexBasis = "250px">
-            <ContentsBox topHover = {topHover} flexDirection = "column">
-                <ContentsTop onMouseOver={()=>setTopHover(true)} onMouseOut={()=>setTopHover(false)} onClick = {thumbClickEvent}>
-                    <Timer>{timer}</Timer>
-                    <Thumb src={thumb} alt=""/>
-                </ContentsTop>
-                <Div width = "100%">
-                    <ProfileIcon src={profile} alt=""/>
-                    {hover? <SetIcon src="./img/main/set.png" alt=""/> :""}
-                    <Div width = "100% - 80px" padding = "0 24px 0 0" flexDirection = "column">
-                        <VideoHead>
-                            {video_head}
-                        </VideoHead>
-                        <P class = "channel_name">
-                            {channel_name}
-                        </P>
-                        <Div>
-                            <span> {view}</span>
-                            <span>{post_time}</span>
+        
+            <Contents onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)}
+            margin = "0 8px 40px 8px" flexBasis = "250px">
+                <Link to={`/video/${index}`}>
+                    <ContentsBox topHover = {topHover} flexDirection = "column">
+                        <ContentsTop onMouseOver={()=>setTopHover(true)} onMouseOut={()=>setTopHover(false)} onClick = {thumbClickEvent}>
+                            <Timer>{timer}</Timer>
+                            <Thumb src={thumb} alt=""/>
+                        </ContentsTop>
+                        <Div width = "100%">
+                            <ProfileIcon src={profile} alt=""/>
+                            {hover? <SetIcon src="./img/main/set.png" alt=""/> :""}
+                            <Div width = "100% - 80px" padding = "0 24px 0 0" flexDirection = "column">
+                                <VideoHead>
+                                    {video_head}
+                                </VideoHead>
+                                <P class = "channel_name">
+                                    {channel_name}
+                                </P>
+                                <Div>
+                                    <span> {view}</span>
+                                    <span>{post_time}</span>
+                                </Div>
+                            </Div>
                         </Div>
-                    </Div>
-                </Div>
-                {/* thumb Hover시 나오는 부분 */}
-                <HiddenBox topHover = {topHover} padding = "20px 0 0 0" flexDirection = "column" width = "100%">
-                    
-                    <Div justifyContent="center" alignItems = "center" 
-                    width = "calc(100%-24px)" height = "36px" borderRadius="50px"
-                    bgColor = "#e9e9e9" margin = "0px 12px 10px 12px">
-                        <Icon src="./img/main/clock_icon.png" alt=""/>
-                        <Span>나중에 볼 동영상</Span>
-                    </Div>
-                    <Div justifyContent="center" alignItems = "center" 
-                    width = "calc(100%-24px)" height = "36px" borderRadius="50px"
-                    bgColor = "#e9e9e9" margin = "0px 12px 10px 12px">
-                        <Icon src="./img/main/playlist_icon.png" alt=""/>
-                        <Span>현재 재생목록에 추가</Span>
-                    </Div>
-                </HiddenBox>
-            </ContentsBox>
-        </Contents>
+                        {/* thumb Hover시 나오는 부분 */}
+                        <HiddenBox topHover = {topHover} padding = "20px 0 0 0" flexDirection = "column" width = "100%">
+                            
+                            <Div justifyContent="center" alignItems = "center" 
+                            width = "calc(100%-24px)" height = "36px" borderRadius="50px"
+                            bgColor = "#e9e9e9" margin = "0px 12px 10px 12px">
+                                <Icon src="./img/main/clock_icon.png" alt=""/>
+                                <Span>나중에 볼 동영상</Span>
+                            </Div>
+                            <Div justifyContent="center" alignItems = "center" 
+                            width = "calc(100%-24px)" height = "36px" borderRadius="50px"
+                            bgColor = "#e9e9e9" margin = "0px 12px 10px 12px">
+                                <Icon src="./img/main/playlist_icon.png" alt=""/>
+                                <Span>현재 재생목록에 추가</Span>
+                            </Div>
+                        </HiddenBox>
+                    </ContentsBox>
+                </Link>
+            </Contents>
+        
     )
 }
 

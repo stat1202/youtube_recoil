@@ -31,7 +31,7 @@ const ShareBtn = () =>{
     return(
         <ShareDiv onClick ={shareClickEvent} width="84px" height ="36px" justifyContent = "center"
         alignItems = "center" bgColor = "#dbdbdb" borderRadius="50px">
-            <VideoIcon src= "./img/video/share_icon.png" alt="" padding="6px"/>
+            <VideoIcon src= "../../img/video/share_icon.png" alt="" padding="6px"/>
             <Span>공유</Span>
         </ShareDiv>
     )

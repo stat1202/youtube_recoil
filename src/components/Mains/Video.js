@@ -14,6 +14,7 @@ import { videoState } from "../../recoil/DataState"
 import { ChannelIcon } from "../../styles/Icon"
 import { Div } from "../../styles/Div"
 import { Button } from "../../styles/Button"
+import {Routes, Route, useParams} from "react-router-dom"
 
 // ===== style =====
 
@@ -34,9 +35,14 @@ const Aside = styled.aside`
 const Video = () =>{
 
     // ===== initialize =====
+    const {videoIndex} = useParams()
     const videoInfo = useRecoilValue(videoInfoState)
     const video = useRecoilValue(videoState)
     const {profile, video_head, channel_name} = {...video[videoInfo.index]}
+    // console.log(videoInfo.index)
+    // console.log(video[videoIndex])
+    // console.log(profile)
+    
 
     return(
         <React.Fragment>

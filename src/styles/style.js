@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 
 export const fontSize = (size)=>{
     if(size === "small") return "10px"
@@ -13,4 +13,21 @@ export const whichColor = (color) =>{
     if(color === "gray") return "#e9e9e9"
     if(color === "border") return "#858585"
     if(color === "black") return "#000"
+}
+
+export const whichFont = (font) =>{
+    if( font === "main") return css`
+        @font-face{
+            font-family:'NanumSquare';
+            src: url(./font/NanumSquareNeoTTF-cBd.woff);
+        }
+        font-family:"NanumSquare";
+    `
+    else if( font === "hand") return css`
+        @font-face{
+            font-family:'Kyobo';
+            src: url(./font/KyoboHandwriting2021sjy.ttf);
+        }
+        font-family:"Kyobo";
+    `
 }

@@ -5,6 +5,7 @@ import { fontSize, whichColor } from "./style"
 export const Span = styled.span`
     width: fit-content;
     font-size: ${fontSize("medium")};
+    
 `
 
 export const Timer = styled.span`

@@ -60,7 +60,7 @@ const Header = () =>{
                             <Icon src = {headerList[0]} borderRadius="50%" onClick={()=>setSearchClick(false)}/>
                         </Div>
                         <Mobile>
-                            <Div alignItems = "center" flexBasis = "640px" id="mobile_search">
+                            <Div alignItems = "center" flexBasis = "640px">
                                 <Div width = "100%" padding = "0 4px" margin = "0 0 0 40px">
                                     <SearchBar type="text" placeholder = "검색" padding="0px 4px 0px 16px" border = "1px solid #858585" height = "38px"/>
                                     <SearchIcon src = {headerList[3]} padding="7px 19px"/>

@@ -6,6 +6,7 @@ import NavIcon from "./NavIcon"
 import { isMenuClickState } from "../recoil/MainState"
 import { Div } from "../styles/Div"
 
+
 // ===== style =====
 
 const NavStyle = styled.nav`
@@ -33,20 +34,28 @@ const Nav = () =>{
     //===== data =====
     const navList = [
         {
+            "id" : 1,
             "src" : "./img/nav/home.png",
-            "txt" : "홈"
+            "txt" : "홈",
+            "address" : "home"
         },
-        {
+        {   
+            "id" : 2,
             "src" : "./img/nav/shorts.png",
-            "txt" : "Shorts"
+            "txt" : "Shorts",
+            "address" : "shorts"
         },
-        {
+        {   
+            "id" : 3,
             "src" : "./img/nav/playlist.png",
-            "txt" : "구독"
+            "txt" : "구독",
+            "address" : "subscribe"
         },
         {
+            "id" : 4,
             "src" : "./img/nav/gallery.png",
-            "txt" : "보관함"
+            "txt" : "보관함",
+            "address" : "gallery"
         },
     ]
 

@@ -7,9 +7,13 @@ import Subscription from "./Mains/Subscription"
 import Gallery from "./Mains/Gallery"
 import Home from "./Mains/Home"
 import Video from "./Mains/Video"
+import NotFound from "./Mains/NotFound"
+
 
 import { whichNavClickState } from "../recoil/MainState"
 import { videoInfoState } from "../recoil/VideoState"
+import {Routes, Route, useParams} from "react-router-dom"
+
 
 // ===== style =====
 
@@ -30,17 +34,22 @@ const MainStyle = styled.main`
 const Main = () =>{
     
     //===== useSelector =====
-    const navName = useRecoilValue(whichNavClickState)
+    // const navName = useRecoilValue(whichNavClickState)
     const videoInfo = useRecoilValue(videoInfoState)
+
     return(
         <MainStyle videoInfo = {videoInfo.index}>
-            <React.Fragment>
-                {navName === "홈" && videoInfo.index === null && <Home/>}
-                {navName === "Shorts" && videoInfo.index === null && <Shorts/>}
-                {navName === "구독" && videoInfo.index === null && <Subscription/>}
-                {navName === "보관함" && videoInfo.index === null && <Gallery/>}
-                {videoInfo.index !== null && <Video/>}
-            </React.Fragment>
+            {/* <React.Fragment> */}
+                <Routes>
+                    <Route path="/" element = {<Home/>}></Route>
+                    <Route path="/shorts" element = {<Shorts/>}></Route>
+                    <Route path="/subscribe" element = {<Subscription/>}></Route>
+                    <Route path="/gallery" element = {<Gallery/>}></Route>
+                    <Route path={"/video/:videoIndex"} element = {<Video/>}></Route>
+                    <Route path="*" element={<NotFound/>}></Route>
+                </Routes>
+                
+            {/* </React.Fragment> */}
         </MainStyle>
     )
 }
